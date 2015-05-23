@@ -54,6 +54,7 @@
 #include "../PSTH/PeriStimulusTimeHistogramNode.h"
 #include "../CAR/CAR.h"
 #include "../Rectifier/Rectifier.h"
+#include "../MyTestSink/MyTestSink.h"
 
     
 ProcessorGraph::ProcessorGraph() : currentNodeId(100)
@@ -663,17 +664,22 @@ GenericProcessor* ProcessorGraph::createProcessorFromDescription(String& descrip
             processor = new ArduinoOutput();
         }
         else if (subProcessorType.equalsIgnoreCase("Pulse Pal"))
-        {
+	  {
             std::cout << "Creating a Pulse Pal output node." << std::endl;
             processor = new PulsePalOutput();
-		}
-		else if (subProcessorType.equalsIgnoreCase("PSTH"))
-		{
-			std::cout << "Creating a PSTH output node." << std::endl;
-			processor = new PeriStimulusTimeHistogramNode();
-		}
+	  }
+	else if (subProcessorType.equalsIgnoreCase("PSTH"))
+	  {
+	    std::cout << "Creating a PSTH output node." << std::endl;
+	    processor = new PeriStimulusTimeHistogramNode();
+	  }
+	else if (subProcessorType.equalsIgnoreCase("Test Sink"))
+	  {
+	    std::cout << "Creating a simple test output node" << std::endl;
+	    processor = new MyTestSink();
+	  }
 
-		CoreServices::sendStatusMessage("New sink created.");
+	CoreServices::sendStatusMessage("New sink created.");
     }
 
     return processor;

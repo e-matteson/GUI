@@ -53,7 +53,7 @@ ProcessorList::ProcessorList()
 
     ProcessorListItem* sources = new ProcessorListItem("Sources");
     //sources->addSubItem(new ProcessorListItem("RHA2000-EVAL"));
-    //sources->addSubItem(new ProcessorListItem("Signal Generator"));
+    sources->addSubItem(new ProcessorListItem("Signal Generator"));
     //sources->addSubItem(new ProcessorListItem("Custom FPGA"));
     sources->addSubItem(new ProcessorListItem("Rhythm FPGA"));
 #if JUCE_WINDOWS // eCube module currently only available for Windows
@@ -91,6 +91,7 @@ ProcessorList::ProcessorList()
     sinks->addSubItem(new ProcessorListItem("Arduino Output"));
     // sinks->addSubItem(new ProcessorListItem("FPGA Output"));
     sinks->addSubItem(new ProcessorListItem("Pulse Pal"));
+    sinks->addSubItem(new ProcessorListItem("Test Sink"));
 
     ProcessorListItem* utilities = new ProcessorListItem("Utilities");
     utilities->addSubItem(new ProcessorListItem("Splitter"));
