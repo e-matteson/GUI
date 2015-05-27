@@ -32,6 +32,9 @@
     <Filter Include="open-ephys\Source\Processors">
       <UniqueIdentifier>{3DDEC88C-BAA5-2DDA-A59F-0FB74070AB82}</UniqueIdentifier>
     </Filter>
+    <Filter Include="open-ephys\Source\Processors\MyTestSource">
+      <UniqueIdentifier>{CC59423D-2728-303E-3AB4-39E0C331A6F8}</UniqueIdentifier>
+    </Filter>
     <Filter Include="open-ephys\Source\Processors\MyTestSink">
       <UniqueIdentifier>{E469686E-907B-AE3A-D477-4FE660347DDB}</UniqueIdentifier>
     </Filter>
@@ -457,6 +460,9 @@
     <ClCompile Include="..\..\Source\Audio\AudioComponent.cpp">
       <Filter>open-ephys\Source\Audio</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Processors\MyTestSource\MyTestSource.cpp">
+      <Filter>open-ephys\Source\Processors\MyTestSource</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Processors\MyTestSink\MyTestSink.cpp">
       <Filter>open-ephys\Source\Processors\MyTestSink</Filter>
     </ClCompile>
@@ -486,6 +492,9 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\Processors\ChannelMappingNode\ChannelMappingNode.cpp">
       <Filter>open-ephys\Source\Processors\ChannelMappingNode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Processors\DataThreads\MyTestThread.cpp">
+      <Filter>open-ephys\Source\Processors\DataThreads</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Processors\DataThreads\EcubeEditor.cpp">
       <Filter>open-ephys\Source\Processors\DataThreads</Filter>
@@ -2058,6 +2067,9 @@
     <ClInclude Include="..\..\Source\Audio\AudioComponent.h">
       <Filter>open-ephys\Source\Audio</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\Processors\MyTestSource\MyTestSource.h">
+      <Filter>open-ephys\Source\Processors\MyTestSource</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\Processors\MyTestSink\MyTestSink.h">
       <Filter>open-ephys\Source\Processors\MyTestSink</Filter>
     </ClInclude>
@@ -2087,6 +2099,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\Processors\ChannelMappingNode\ChannelMappingNode.h">
       <Filter>open-ephys\Source\Processors\ChannelMappingNode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Processors\DataThreads\MyTestThread.h">
+      <Filter>open-ephys\Source\Processors\DataThreads</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Processors\DataThreads\EcubeEditor.h">
       <Filter>open-ephys\Source\Processors\DataThreads</Filter>

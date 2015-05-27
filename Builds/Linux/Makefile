@@ -55,6 +55,7 @@ OBJECTS := \
   $(OBJDIR)/AccessClass_de9602d5.o \
   $(OBJDIR)/PracticalSocket_2574ecc8.o \
   $(OBJDIR)/AudioComponent_521bd9c9.o \
+  $(OBJDIR)/MyTestSource_52dda3ea.o \
   $(OBJDIR)/MyTestSink_b560a96a.o \
   $(OBJDIR)/Rectifier_21cc94b6.o \
   $(OBJDIR)/ArduinoOutput_d5a968de.o \
@@ -65,6 +66,7 @@ OBJECTS := \
   $(OBJDIR)/Channel_5cb2d4d2.o \
   $(OBJDIR)/ChannelMappingEditor_9b145f15.o \
   $(OBJDIR)/ChannelMappingNode_ec0559ea.o \
+  $(OBJDIR)/MyTestThread_ebb2af47.o \
   $(OBJDIR)/EcubeEditor_ba242592.o \
   $(OBJDIR)/RHD2000Editor_dbd5a24.o \
   $(OBJDIR)/EcubeThread_d0477baf.o \
@@ -228,6 +230,11 @@ $(OBJDIR)/AudioComponent_521bd9c9.o: ../../Source/Audio/AudioComponent.cpp
 	@echo "Compiling AudioComponent.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
+$(OBJDIR)/MyTestSource_52dda3ea.o: ../../Source/Processors/MyTestSource/MyTestSource.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling MyTestSource.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
 $(OBJDIR)/MyTestSink_b560a96a.o: ../../Source/Processors/MyTestSink/MyTestSink.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling MyTestSink.cpp"
@@ -276,6 +283,11 @@ $(OBJDIR)/ChannelMappingEditor_9b145f15.o: ../../Source/Processors/ChannelMappin
 $(OBJDIR)/ChannelMappingNode_ec0559ea.o: ../../Source/Processors/ChannelMappingNode/ChannelMappingNode.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling ChannelMappingNode.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/MyTestThread_ebb2af47.o: ../../Source/Processors/DataThreads/MyTestThread.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling MyTestThread.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/EcubeEditor_ba242592.o: ../../Source/Processors/DataThreads/EcubeEditor.cpp

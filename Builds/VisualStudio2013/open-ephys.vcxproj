@@ -271,6 +271,7 @@
     <ClCompile Include="..\..\Source\AccessClass.cpp"/>
     <ClCompile Include="..\..\Source\Network\PracticalSocket.cpp"/>
     <ClCompile Include="..\..\Source\Audio\AudioComponent.cpp"/>
+    <ClCompile Include="..\..\Source\Processors\MyTestSource\MyTestSource.cpp"/>
     <ClCompile Include="..\..\Source\Processors\MyTestSink\MyTestSink.cpp"/>
     <ClCompile Include="..\..\Source\Processors\Rectifier\Rectifier.cpp"/>
     <ClCompile Include="..\..\Source\Processors\ArduinoOutput\ArduinoOutput.cpp"/>
@@ -281,6 +282,7 @@
     <ClCompile Include="..\..\Source\Processors\Channel\Channel.cpp"/>
     <ClCompile Include="..\..\Source\Processors\ChannelMappingNode\ChannelMappingEditor.cpp"/>
     <ClCompile Include="..\..\Source\Processors\ChannelMappingNode\ChannelMappingNode.cpp"/>
+    <ClCompile Include="..\..\Source\Processors\DataThreads\MyTestThread.cpp"/>
     <ClCompile Include="..\..\Source\Processors\DataThreads\EcubeEditor.cpp"/>
     <ClCompile Include="..\..\Source\Processors\DataThreads\RHD2000Editor.cpp"/>
     <ClCompile Include="..\..\Source\Processors\DataThreads\EcubeThread.cpp"/>
@@ -1519,6 +1521,7 @@
     <ClInclude Include="..\..\Source\AccessClass.h"/>
     <ClInclude Include="..\..\Source\Network\PracticalSocket.h"/>
     <ClInclude Include="..\..\Source\Audio\AudioComponent.h"/>
+    <ClInclude Include="..\..\Source\Processors\MyTestSource\MyTestSource.h"/>
     <ClInclude Include="..\..\Source\Processors\MyTestSink\MyTestSink.h"/>
     <ClInclude Include="..\..\Source\Processors\Rectifier\Rectifier.h"/>
     <ClInclude Include="..\..\Source\Processors\ArduinoOutput\ArduinoOutput.h"/>
@@ -1529,6 +1532,7 @@
     <ClInclude Include="..\..\Source\Processors\Channel\Channel.h"/>
     <ClInclude Include="..\..\Source\Processors\ChannelMappingNode\ChannelMappingEditor.h"/>
     <ClInclude Include="..\..\Source\Processors\ChannelMappingNode\ChannelMappingNode.h"/>
+    <ClInclude Include="..\..\Source\Processors\DataThreads\MyTestThread.h"/>
     <ClInclude Include="..\..\Source\Processors\DataThreads\EcubeEditor.h"/>
     <ClInclude Include="..\..\Source\Processors\DataThreads\RHD2000Editor.h"/>
     <ClInclude Include="..\..\Source\Processors\DataThreads\EcubeThread.h"/>

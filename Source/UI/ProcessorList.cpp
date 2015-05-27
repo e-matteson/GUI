@@ -66,6 +66,8 @@ ProcessorList::ProcessorList()
     sources->addSubItem(new ProcessorListItem("Network Events"));
 #endif
     sources->addSubItem(new ProcessorListItem("Serial Port"));
+    sources->addSubItem(new ProcessorListItem("Test Source"));
+
     //sources->addSubItem(new ProcessorListItem("Event Generator"));
 
     ProcessorListItem* filters = new ProcessorListItem("Filters");

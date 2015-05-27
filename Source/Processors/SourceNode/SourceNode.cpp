@@ -24,6 +24,7 @@
 #include "SourceNode.h"
 #include "../DataThreads/DataBuffer.h"
 #include "../DataThreads/RHD2000Thread.h"
+#include "../DataThreads/MyTestThread.h"
 #include "../DataThreads/EcubeThread.h" // Added by Michael Borisov
 #include "../SourceNode/SourceNodeEditor.h"
 #include "../DataThreads/RHD2000Editor.h"
@@ -59,6 +60,10 @@ SourceNode::SourceNode(const String& name_)
     }
 #endif
 
+    else if (getName().equalsIgnoreCase("Test Source"))
+    {
+        dataThread = new MyTestThread(this);
+    }
     if (dataThread != 0)
     {
         if (!dataThread->foundInputSource())

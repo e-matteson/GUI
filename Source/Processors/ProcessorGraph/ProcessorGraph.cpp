@@ -55,6 +55,7 @@
 #include "../CAR/CAR.h"
 #include "../Rectifier/Rectifier.h"
 #include "../MyTestSink/MyTestSink.h"
+#include "../MyTestSource/MyTestSource.h"
 
     
 ProcessorGraph::ProcessorGraph() : currentNodeId(100)
@@ -542,29 +543,33 @@ GenericProcessor* ProcessorGraph::createProcessorFromDescription(String& descrip
             std::cout << "Creating a new event node." << std::endl;
         }
         else if (subProcessorType.equalsIgnoreCase("File Reader"))
-        {
+	{
             processor = new FileReader();
             std::cout << "Creating a new file reader." << std::endl;
         }
         else if (subProcessorType.equalsIgnoreCase("Serial Port"))
-        {
+	  {
             processor = new SerialInput();
             std::cout << "Creating a new serial port input." << std::endl;
-		}
-		else if (subProcessorType.equalsIgnoreCase("Network Events"))
-		{
-			processor = new NetworkEvents();
-			std::cout << "Creating a new signal generator." << std::endl;
-		}
-
-
-
-		CoreServices::sendStatusMessage("New source node created.");
-
-
+	  }
+	else if (subProcessorType.equalsIgnoreCase("Network Events"))
+	  {
+	    processor = new NetworkEvents();
+	    std::cout << "Creating a new signal generator." << std::endl;
+	  }
+	
+	else if (subProcessorType.equalsIgnoreCase("Test Source"))
+	  {
+            processor = new MyTestSource();
+            std::cout << "Creating a new test source." << std::endl;
+	  }
+	
+	CoreServices::sendStatusMessage("New source node created.");
+	
+	
     }
     else if (processorType.equalsIgnoreCase("Filters"))
-    {
+      {
 
         if (subProcessorType.equalsIgnoreCase("Bandpass Filter"))
         {

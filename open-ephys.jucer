@@ -293,6 +293,11 @@
               file="Source/Audio/AudioComponent.h"/>
       </GROUP>
       <GROUP id="yQmqZWk" name="Processors">
+        <GROUP id="{DA378349-D12C-5AA8-E5AD-CAEDA41011C5}" name="MyTestSource">
+          <FILE id="oCHT0V" name="MyTestSource.cpp" compile="1" resource="0"
+                file="Source/Processors/MyTestSource/MyTestSource.cpp"/>
+          <FILE id="xENbhx" name="MyTestSource.h" compile="0" resource="0" file="Source/Processors/MyTestSource/MyTestSource.h"/>
+        </GROUP>
         <GROUP id="{3FCFBFDA-848D-6B59-5F37-E3D1F43D54DF}" name="MyTestSink">
           <FILE id="OZdoER" name="MyTestSink.cpp" compile="1" resource="0" file="Source/Processors/MyTestSink/MyTestSink.cpp"/>
           <FILE id="L8dHqZ" name="MyTestSink.h" compile="0" resource="0" file="Source/Processors/MyTestSink/MyTestSink.h"/>
@@ -335,6 +340,9 @@
                 file="Source/Processors/ChannelMappingNode/ChannelMappingNode.h"/>
         </GROUP>
         <GROUP id="ZgsuWxi" name="DataThreads">
+          <FILE id="zRc2B6" name="MyTestThread.cpp" compile="1" resource="0"
+                file="Source/Processors/DataThreads/MyTestThread.cpp"/>
+          <FILE id="kWJH2k" name="MyTestThread.h" compile="0" resource="0" file="Source/Processors/DataThreads/MyTestThread.h"/>
           <FILE id="gHzlwP" name="EcubeEditor.cpp" compile="1" resource="0" file="Source/Processors/DataThreads/EcubeEditor.cpp"/>
           <FILE id="Bi0une" name="EcubeEditor.h" compile="0" resource="0" file="Source/Processors/DataThreads/EcubeEditor.h"/>
           <FILE id="ZBPSXE" name="RHD2000Editor.cpp" compile="1" resource="0"
