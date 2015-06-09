@@ -60,7 +60,7 @@ SourceNode::SourceNode(const String& name_)
     }
 #endif
 
-    else if (getName().equalsIgnoreCase("Test Source"))
+    else if (getName().equalsIgnoreCase("Test Source")) //TODO test, should be sink?
     {
         dataThread = new MyTestThread(this);
     }

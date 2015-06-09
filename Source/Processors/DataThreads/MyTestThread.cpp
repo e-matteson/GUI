@@ -51,15 +51,65 @@ MyTestThread::~MyTestThread()
         fclose(input);
 }
 
+// void MyTestThread::setFile(String fullpath)
+// {
+// }
+ //    filePath = fullpath;
+
+//     const char* path = filePath.getCharPointer();
+
+//     if (input)
+//         fclose(input);
+
+//     input = fopen(path, "r");
+
+//     // Avoid a segfault if file isn't found
+//     if (!input)
+//     {
+//         std::cout << "Can't find data file "
+//                   << '"' << path << "\""
+//                   << std::endl;
+//         return;
+//     }
+
+//     fseek(input, 0, SEEK_END);
+//     lengthOfInputFile = ftell(input);
+//     rewind(input);
+
+
+//     sn->tryEnablingEditor();
+
+// }
+
+// String MyTestThread::getFile()
+// {
+//   return ""//filePath;
+// }
+
+bool MyTestThread::foundInputSource()
+{
+    return input != 0;
+}
+
+int MyTestThread::getNumChannels()
+{
+    return 16;
+}
+
 float MyTestThread::getSampleRate()
 {
-    return 2.0f;
+    return 28000.0f;
+}
+
+float MyTestThread::getBitVolts()
+{
+    return 0.0305f;
 }
 
 bool MyTestThread::startAcquisition()
 {
-    // if (!input)
-        // return false;
+    if (!input)
+        return false;
 
     startThread();
     return true;
@@ -67,7 +117,7 @@ bool MyTestThread::startAcquisition()
 
 bool MyTestThread::stopAcquisition()
 {
-    std::cout << "test thread received disable signal." << std::endl;
+    std::cout << "MyTestThread received disable signal." << std::endl;
     if (isThreadRunning())
     {
         signalThreadShouldExit();
@@ -76,57 +126,165 @@ bool MyTestThread::stopAcquisition()
     return true;
 }
 
-// bool MyTestThread::updateBuffer()
+bool MyTestThread::updateBuffer()
+{
+    // if (!input)
+        // return false;
+    // if (dataBuffer->getNumSamples() < bufferSize)
+
+    //     for (int n = 0; n < bufferSize; n++)
+    //     {
+    //         thisSample[chan] = 42.0f
+
+    //         if (chan == 15)
+    //         {
+
+    //             timestamp++; // = (0 << 0) + (0 << 8) + (0 << 16) + (0 << 24); // +
+    //             //(4 << 32); // + (3 << 40) + (2 << 48) + (1 << 56);
+
+    //             //timestamp++; // = timer.getHighResolutionTicks();
+    //             dataBuffer->addToBuffer(thisSample, &timestamp, &eventCode, 1);
+    //             chan = 0;
+    //         }
+    //         else
+    //         {
+    //             chan++;
+    //         }
+
+
+    //     }
+
+    // }
+    // else
+    // {
+    //     wait(50); // pause for 50 ms to decrease sample rate
+    // }
+
+    return true;
+}
+
+
+// MyTestThread::MyTestThread(SourceNode* sn) :
+//   DataThread(sn), input(0), bufferSize(0)
 // {
-//     if (!input)
-//         return false;
-//     if (dataBuffer->getNumSamples() < bufferSize)
+
+//     bufferSize = 1600;
+//     dataBuffer = new DataBuffer(16, bufferSize*3);
+
+//     eventCode = 0;
+
+//     std::cout << "Test Thread initialized." << std::endl;
+
+// }
+
+// MyTestThread::~MyTestThread()
+// {
+// }
+
+// bool MyTestThread::startAcquisition()
+// {
+//     // if (!input)
+//         // return false;
+
+//     startThread();
+//     return true;
+// }
+
+// bool MyTestThread::stopAcquisition()
+// {
+//     std::cout << "test thread received disable signal." << std::endl;
+//     if (isThreadRunning())
 //     {
-//         //       // std::cout << dataBuffer->getNumSamples() << std::endl;
-
-//         if (ftell(input) >= lengthOfInputFile - bufferSize)
-//         {
-//             rewind(input);
-//         }
-
-//         size_t numRead = fread(readBuffer, 2, bufferSize, input);
-
-//         if (numRead != bufferSize)
-//         {
-//             std::cout << "Fewer samples read than were requested." << std::endl;
-//         }
-        
-//         int chan = 0;
-
-//         for (int n = 0; n < bufferSize; n++)
-//         {
-//             thisSample[chan] = float(-readBuffer[n]) * 0.0305; // previously 0.035
-
-//             if (chan == 15)
-//             {
-
-//                 timestamp++; // = (0 << 0) + (0 << 8) + (0 << 16) + (0 << 24); // +
-//                 //(4 << 32); // + (3 << 40) + (2 << 48) + (1 << 56);
-
-//                 //timestamp++; // = timer.getHighResolutionTicks();
-//                 dataBuffer->addToBuffer(thisSample, &timestamp, &eventCode, 1);
-//                 chan = 0;
-//             }
-//             else
-//             {
-//                 chan++;
-//             }
-
-
-//         }
-
-//     }
-//     else
-//     {
-//         wait(50); // pause for 50 ms to decrease sample rate
+//         signalThreadShouldExit();
 //     }
 
 //     return true;
 // }
+
+// bool MyTestThread::foundInputSource()
+// {
+//     return input != 0;
+// }
+
+
+// int MyTestThread::getNumChannels()
+// {
+//     return 1;
+// }
+
+// float MyTestThread::getSampleRate()
+// {
+//     return 2.0f;
+// }
+
+// float MyTestThread::getBitVolts(int chan)
+// {
+//     return 0.0305f;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // bool MyTestThread::updateBuffer()
+// // {
+// //     if (!input)
+// //         return false;
+// //     if (dataBuffer->getNumSamples() < bufferSize)
+// //     {
+// //         //       // std::cout << dataBuffer->getNumSamples() << std::endl;
+
+// //         if (ftell(input) >= lengthOfInputFile - bufferSize)
+// //         {
+// //             rewind(input);
+// //         }
+
+// //         size_t numRead = fread(readBuffer, 2, bufferSize, input);
+
+// //         if (numRead != bufferSize)
+// //         {
+// //             std::cout << "Fewer samples read than were requested." << std::endl;
+// //         }
+        
+// //         int chan = 0;
+
+// //         for (int n = 0; n < bufferSize; n++)
+// //         {
+// //             thisSample[chan] = float(-readBuffer[n]) * 0.0305; // previously 0.035
+
+// //             if (chan == 15)
+// //             {
+
+// //                 timestamp++; // = (0 << 0) + (0 << 8) + (0 << 16) + (0 << 24); // +
+// //                 //(4 << 32); // + (3 << 40) + (2 << 48) + (1 << 56);
+
+// //                 //timestamp++; // = timer.getHighResolutionTicks();
+// //                 dataBuffer->addToBuffer(thisSample, &timestamp, &eventCode, 1);
+// //                 chan = 0;
+// //             }
+// //             else
+// //             {
+// //                 chan++;
+// //             }
+
+
+// //         }
+
+// //     }
+// //     else
+// //     {
+// //         wait(50); // pause for 50 ms to decrease sample rate
+// //     }
+
+// //     return true;
+// // }
 
 

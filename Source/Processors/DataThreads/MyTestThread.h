@@ -50,19 +50,27 @@ class SourceNode;
 
 */
 
-class FileReaderThread : public DataThread
+class MyTestThread : public DataThread
 
 {
 public:
-    FileReaderThread(SourceNode* sn);
-    ~FileReaderThread();
+    MyTestThread(SourceNode* sn);
+    ~MyTestThread();
 
+    bool foundInputSource();
     bool startAcquisition();
     bool stopAcquisition();
+    int getNumChannels();
     float getSampleRate();
+    float getBitVolts();
 
+    /* void setFile(String fullpath); */
+    /* String getFile(); */
 
 private:
+    int lengthOfInputFile;
+    FILE* input;
+
     float thisSample[16];
     int16 readBuffer[1600];
 
@@ -70,16 +78,10 @@ private:
 
     String filePath;
 
-    /* bool updateBuffer(); */
+    bool updateBuffer();
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(FileReaderThread);
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(MyTestThread);
 };
-
-
-
-
-
-
 
 
 #endif  // MYTESTTHREAD_H_INCLUDED
